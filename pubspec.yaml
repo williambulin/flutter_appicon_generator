@@ -1,0 +1,14 @@
+name: flutter_appicon_generator
+description: Package that enables users to generate app icons for Android, iOS, macOS and Windows directly from your config file.
+version: 1.0.0
+homepage: https://williambulin.com
+
+environment:
+  sdk: '>=2.15.0-268.0.dev <3.0.0'
+
+dependencies:
+  yaml: ^3.1.0
+  image: ^3.0.8
+
+dev_dependencies:
+  lints: ^1.0.0
