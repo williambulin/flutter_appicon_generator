@@ -26,7 +26,8 @@ Future<void> main(List<String> arguments) async {
   final androidDirectory = Directory('${directory.path}/android');
   final windowsDirectory = Directory('${directory.path}/windows');
 
-  final iconCropped = copyCrop(iconForegroundDecoded!, iconForegroundDecoded.width ~/ 4, iconForegroundDecoded.height ~/ 4, iconForegroundDecoded.width ~/ 2, iconForegroundDecoded.height ~/ 2);
+  final iconForegroundRescaled = copyResize(iconForegroundDecoded!, width: (iconForegroundDecoded.width * 1.75).toInt(), height: (iconForegroundDecoded.height * 1.75).toInt());
+  final iconCropped = copyCrop(iconForegroundRescaled, iconForegroundRescaled.width ~/ 4, iconForegroundRescaled.height ~/ 4, iconForegroundRescaled.width ~/ 2, iconForegroundRescaled.height ~/ 2);
   final iconCombined = copyOnto(decodeImage(await iconBackgroundFile.readAsBytes())!, iconCropped, blend: true, center: true);
 
   try {
